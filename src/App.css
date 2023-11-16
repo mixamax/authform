@@ -1,38 +1,91 @@
 .App {
-  text-align: center;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(
+        circle 30px at 50% 50%,
+        transparent 30px,
+        #ffff 0
+    );
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.palm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../public/пальмы.png");
+    width: 100vw;
+    height: 100vh;
+    background-attachment: fixed;
+    z-index: -2;
+    margin: 0;
+    background-size: cover;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.arrow {
+    fill: black;
+    position: absolute;
+    top: calc(50% - 80px);
+    left: calc(50% - 10px);
+    height: 35px;
+    margin-bottom: 10px;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-name: slideUp;
+    animation-name: slideUp;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;
 }
+@-webkit-keyframes slideUp {
+    from {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 
-.App-link {
-  color: #61dafb;
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    20% {
+        -webkit-transform: translateY(-70px);
+        transform: translateY(-70px);
+    }
+    35% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
+@keyframes slideUp {
+    from {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    20% {
+        -webkit-transform: translateY(-70px);
+        transform: translateY(-70px);
+    }
+    35% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
