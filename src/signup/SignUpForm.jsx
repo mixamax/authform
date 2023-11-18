@@ -12,6 +12,10 @@ export function SignUpForm({ closeModal, setShowImg }) {
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(mailValue, passValue);
+        if (mailValue.trim() === "" || passValue.trim() === "") {
+            setAlert("* поле не может быть пустым");
+            return;
+        }
         if (passValue !== confirmValue) {
             setAlert("* пароли не совпадают");
             return;
